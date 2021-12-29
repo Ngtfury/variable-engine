@@ -1,15 +1,15 @@
 ## A simple package for handling string variables.
-### Welcome!
+# Welcome!
 This is a simple package for handling variables in string, You can add or remove variables with prefix and suffix!
 
 This project is open source ⭐.
 
-### Install
+# Install
 ```
 pip install -U git+https://github.com/Ngtfury/variable-engine
 ```
 
-### Usage
+# Usage
 
 ## Without prefix and suffix
 ```py
@@ -29,7 +29,7 @@ engine.remove_variable('baz')
 #To clear all variables
 engine.clear_variables()
 ```
-# Output
+### Output
 ```py
 bar bar qux qux # foo replaced with bar and baz replaced with qux
 ```
@@ -45,7 +45,7 @@ engine.add_var(variable = 'foo',  value = 'bar')
 string = engine.process('This is foo -> [foo]. wait what?')
 print(string)
 ```
-# Output
+### Output
 ```
 This is foo -> bar. wait what?
 ```
