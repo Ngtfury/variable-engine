@@ -11,22 +11,22 @@ class VariableEngine:
             raise NameError(f'Variable "{variable}" already exists.')
 
         self.variables[str(variable)] = str(value)
-    add_var = add_variable
+
 
     def clear_variables(self):
 
         del self.variables
         self.variables = {}
-    clear_vars = clear_variables
+
 
     def remove_variable(self, variable: str):
         _variable = str(variable)
 
         if not _variable in self.variables:
-            raise KeyError(f'There is no such variable: "{variable}".')
+            raise TypeError(f'There is no such variable: "{variable}".')
 
         del self.variables[_variable]
-    remove_var = remove_variable
+
 
     def process(self, string: str):
 

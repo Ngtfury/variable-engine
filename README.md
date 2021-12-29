@@ -17,14 +17,14 @@ import variable_engine
 from variable_engine import VariableEngine
 
 engine = VariableEngine() #Calls the __init__
-engine.add_variable(variable = 'foo', value = 'bar') # Aliase "add_var"
+engine.add_variable(variable = 'foo', value = 'bar')
 engine.add_var(variable = 'baz', value = 'qux')
 
 string = engine.process('foo bar baz quz')
 print(string)
 
 #To remove a variable
-engine.remove_variable('baz') # Aliase "remove_var"
+engine.remove_variable('baz')
 
 #To clear all variables
 engine.clear_variables()
