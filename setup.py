@@ -4,7 +4,7 @@ from os import path, environ
 from setuptools import setup
 
 PACKAGE_NAME = 'variable-engine'
-VERSION = '0.1.0'
+VERSION = '0.1.1'
 
 with open("README.md", "r", encoding="utf-8") as f:
     README = f.read()

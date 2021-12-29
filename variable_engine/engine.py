@@ -6,6 +6,8 @@ class VariableEngine:
         self.suffix = str(suffix) if suffix else self.prefix
 
     def add_variable(self, variable: str, value: str):
+        if str(variable) in self.variables:
+            raise TypeError(f'Variable "{variable}" already exists.')
 
         self.variables[str(variable)] = str(value)
     add_var = add_variable
@@ -17,8 +19,12 @@ class VariableEngine:
     clear_vars = clear_variables
 
     def remove_variable(self, variable: str):
+        _variable = str(variable)
 
-        del self.variables[str(variable)]
+        if not _variable in self.variables:
+            raise NameError(f'There is no such variable: "{variable}".')
+
+        del self.variables[_variable]
     remove_var = remove_variable
 
     def process(self, string: str):
