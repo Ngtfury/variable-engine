@@ -1,4 +1,3 @@
-from .exceptions import DuplicateVariable, VariableNotFound
 
 class VariableEngine:
 
@@ -9,7 +8,7 @@ class VariableEngine:
 
     def add_variable(self, variable: str, value: str):
         if str(variable) in self.variables:
-            raise DuplicateVariable(f'Variable "{variable}" already exists.')
+            raise NameError(f'Variable "{variable}" already exists.')
 
         self.variables[str(variable)] = str(value)
     add_var = add_variable
@@ -24,7 +23,7 @@ class VariableEngine:
         _variable = str(variable)
 
         if not _variable in self.variables:
-            raise VariableNotFound(f'There is no such variable: "{variable}".')
+            raise KeyError(f'There is no such variable: "{variable}".')
 
         del self.variables[_variable]
     remove_var = remove_variable
