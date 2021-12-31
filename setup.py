@@ -4,10 +4,19 @@ from os import path, environ
 from setuptools import setup
 
 PACKAGE_NAME = 'variable-engine'
-VERSION = '0.1.2'
 
 with open("README.md", "r", encoding="utf-8") as f:
     README = f.read()
+
+    
+class Version:
+    def __init__(self, major: int = 0, minor: int = 0, micro: int = 0):
+        self.major = major
+        self.minor = minor
+        self.micro = micro
+    
+__version__ = Version(major = 0, minor = 1, micro = 3)
+VERSION = f'{__version__.major}.{__version__.minor}.{__version__.micro}'
 
 setup(
     name = PACKAGE_NAME,
